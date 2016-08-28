@@ -1,5 +1,7 @@
 package com.agritsik.ds.requestor.boundary;
 
+import com.netflix.appinfo.InstanceInfo;
+import com.netflix.discovery.EurekaClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +17,9 @@ public class IndexResource {
     @Autowired
     RestTemplate restTemplate;
 
+    @Autowired
+    EurekaClient discoveryClient;
+
     @RequestMapping("/")
     public String index() {
         return "Hello from " + app;
@@ -22,7 +27,8 @@ public class IndexResource {
 
     @RequestMapping("/users")
     public String users() {
-        return restTemplate.getForObject("http://localhost:8080/users", String.class);
+        InstanceInfo responder = discoveryClient.getNextServerFromEureka("responder", false);
+        return restTemplate.getForObject(responder.getHomePageUrl()+"/users", String.class);
     }
 
 }
