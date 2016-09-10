@@ -13,10 +13,12 @@ In order to demonstrate how to:
 
 ## Tooling
 
-The following techologies are used:
+The following technologies are used:
 
-1. Java and Spring Boot are used for implementing microservices 
-2. Spring Cloud Netflix is used for implementing Api Gateway, Service Discovery, Circuit Breaker etc
+1. Spring Boot is used for implementing microservices 
+2. Netflix Zuul is used for implementing Api Gateway
+3. Netflix Eureka is used for implementing Service Discovery, 
+4. Netflix Hystrix is used for implementing Circuit Breaker
 
 ## How to run
 
@@ -24,8 +26,8 @@ In order to startup the whole system, you need to execute the following commands
 - ```maven clean package``` creates an executable jar using spring-boot-maven-plugin
 - ```java -jar target/*.jar``` runs an application
 
-All registered microservices are available in Eureka's admin area http://localhost:8761/
+All registered microservices are available in Eureka's admin area [http://localhost:8761/](http://localhost:8761/)
 
-All mapped routes are available via specific Zuul end-point http://localhost:8080/routes 
+All mapped routes are available via specific Zuul end-point [http://localhost:8080/routes](http://localhost:8080/routes)
 
 
