@@ -1,4 +1,4 @@
-# Distributed systems via REST
+# Distributed system via REST
 
 The project demonstrates how to build a Resilient Distributed System which contains a set of microservices. 
 
@@ -17,7 +17,7 @@ The following technologies are used:
 
 1. Spring Boot is used for implementing microservices 
 2. Netflix Zuul is used for implementing Api Gateway
-3. Netflix Eureka is used for implementing Service Discovery, 
+3. Netflix Eureka is used for implementing Service Discovery 
 4. Netflix Hystrix is used for implementing Circuit Breaker
 
 ## How to run
